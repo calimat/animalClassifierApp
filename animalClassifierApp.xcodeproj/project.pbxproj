@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		F6DDED272256F4D000CC48E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED262256F4D000CC48E9 /* AppDelegate.swift */; };
-		F6DDED292256F4D000CC48E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED282256F4D000CC48E9 /* ViewController.swift */; };
+		F6DDED292256F4D000CC48E9 /* ClassifierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED282256F4D000CC48E9 /* ClassifierViewController.swift */; };
 		F6DDED2C2256F4D100CC48E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DDED2A2256F4D100CC48E9 /* Main.storyboard */; };
 		F6DDED2E2256F4D200CC48E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DDED2D2256F4D200CC48E9 /* Assets.xcassets */; };
 		F6DDED312256F4D200CC48E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DDED2F2256F4D200CC48E9 /* LaunchScreen.storyboard */; };
+		F6DDED392256F88900CC48E9 /* RoundedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F6DDED232256F4D000CC48E9 /* animalClassifierApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = animalClassifierApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6DDED262256F4D000CC48E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F6DDED282256F4D000CC48E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F6DDED282256F4D000CC48E9 /* ClassifierViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassifierViewController.swift; sourceTree = "<group>"; };
 		F6DDED2B2256F4D100CC48E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F6DDED2D2256F4D200CC48E9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F6DDED302256F4D200CC48E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6DDED322256F4D200CC48E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 			isa = PBXGroup;
 			children = (
 				F6DDED262256F4D000CC48E9 /* AppDelegate.swift */,
-				F6DDED282256F4D000CC48E9 /* ViewController.swift */,
+				F6DDED282256F4D000CC48E9 /* ClassifierViewController.swift */,
 				F6DDED2A2256F4D100CC48E9 /* Main.storyboard */,
 				F6DDED2D2256F4D200CC48E9 /* Assets.xcassets */,
 				F6DDED2F2256F4D200CC48E9 /* LaunchScreen.storyboard */,
 				F6DDED322256F4D200CC48E9 /* Info.plist */,
+				F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */,
 			);
 			path = animalClassifierApp;
 			sourceTree = "<group>";
@@ -135,8 +138,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F6DDED292256F4D000CC48E9 /* ViewController.swift in Sources */,
+				F6DDED292256F4D000CC48E9 /* ClassifierViewController.swift in Sources */,
 				F6DDED272256F4D000CC48E9 /* AppDelegate.swift in Sources */,
+				F6DDED392256F88900CC48E9 /* RoundedVisualEffectView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

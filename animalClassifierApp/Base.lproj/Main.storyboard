@@ -1,24 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Classifier View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ClassifierViewController" customModule="animalClassifierApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ro1-lE-3h2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </imageView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bF1-XD-TVp" customClass="RoundedVisualEffectView" customModule="animalClassifierApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="523" width="335" height="80"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tjw-GA-DYY">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press the camera button to choose an image" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hLt-qU-daM">
+                                            <rect key="frame" x="8" y="8" width="319" height="64"/>
+                                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="hLt-qU-daM" firstAttribute="leading" secondItem="tjw-GA-DYY" secondAttribute="leading" constant="8" id="1NN-zn-cLi"/>
+                                        <constraint firstAttribute="trailing" secondItem="hLt-qU-daM" secondAttribute="trailing" constant="8" id="RxO-fF-CfO"/>
+                                        <constraint firstAttribute="bottom" secondItem="hLt-qU-daM" secondAttribute="bottom" constant="8" id="cQ7-eK-lsi"/>
+                                        <constraint firstItem="hLt-qU-daM" firstAttribute="top" secondItem="tjw-GA-DYY" secondAttribute="top" constant="8" id="gBu-FJ-lzL"/>
+                                    </constraints>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="tJz-yD-z1H"/>
+                                </constraints>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GS3-1Z-ADY">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="jEb-Ip-bSw">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <action selector="cameraBtnWasPressed:" destination="BYZ-38-t0r" id="ngA-w4-6Y7"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="GS3-1Z-ADY" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="13g-UB-Pwd"/>
+                            <constraint firstItem="ro1-lE-3h2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="2Qy-J4-YGh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bF1-XD-TVp" secondAttribute="trailing" constant="20" id="AQi-8m-WXB"/>
+                            <constraint firstItem="ro1-lE-3h2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J2X-Mn-zPT"/>
+                            <constraint firstItem="ro1-lE-3h2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Kwk-GR-RRb"/>
+                            <constraint firstItem="ro1-lE-3h2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UOe-1G-Gwp"/>
+                            <constraint firstItem="GS3-1Z-ADY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bYt-hc-BID"/>
+                            <constraint firstItem="GS3-1Z-ADY" firstAttribute="top" secondItem="bF1-XD-TVp" secondAttribute="bottom" constant="20" id="cmQ-Fn-Oe2"/>
+                            <constraint firstItem="bF1-XD-TVp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="i7r-Pt-bog"/>
+                            <constraint firstItem="GS3-1Z-ADY" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kyZ-pG-lzK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="classificationLabel" destination="hLt-qU-daM" id="RLg-B1-Yyv"/>
+                        <outlet property="imageView" destination="ro1-lE-3h2" id="BFx-qT-A8d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.40000000000001" y="118.29085457271366"/>
         </scene>
     </scenes>
 </document>
