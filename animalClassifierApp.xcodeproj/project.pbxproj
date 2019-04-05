@@ -56,15 +56,31 @@
 		F6DDED252256F4D000CC48E9 /* animalClassifierApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6DDED3B2256FA4E00CC48E9 /* View */,
+				F6DDED3A2256FA4200CC48E9 /* Controller */,
 				F6DDED262256F4D000CC48E9 /* AppDelegate.swift */,
-				F6DDED282256F4D000CC48E9 /* ClassifierViewController.swift */,
 				F6DDED2A2256F4D100CC48E9 /* Main.storyboard */,
 				F6DDED2D2256F4D200CC48E9 /* Assets.xcassets */,
 				F6DDED2F2256F4D200CC48E9 /* LaunchScreen.storyboard */,
 				F6DDED322256F4D200CC48E9 /* Info.plist */,
-				F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */,
 			);
 			path = animalClassifierApp;
+			sourceTree = "<group>";
+		};
+		F6DDED3A2256FA4200CC48E9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F6DDED282256F4D000CC48E9 /* ClassifierViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F6DDED3B2256FA4E00CC48E9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
