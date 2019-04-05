@@ -13,6 +13,7 @@
 		F6DDED2E2256F4D200CC48E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F6DDED2D2256F4D200CC48E9 /* Assets.xcassets */; };
 		F6DDED312256F4D200CC48E9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6DDED2F2256F4D200CC48E9 /* LaunchScreen.storyboard */; };
 		F6DDED392256F88900CC48E9 /* RoundedVisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */; };
+		F6DDED3D2256FDB600CC48E9 /* AnimalClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F6DDED3C2256FDB600CC48E9 /* AnimalClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F6DDED302256F4D200CC48E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F6DDED322256F4D200CC48E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F6DDED382256F88900CC48E9 /* RoundedVisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedVisualEffectView.swift; sourceTree = "<group>"; };
+		F6DDED3C2256FDB600CC48E9 /* AnimalClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = AnimalClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		F6DDED252256F4D000CC48E9 /* animalClassifierApp */ = {
 			isa = PBXGroup;
 			children = (
+				F6DDED3C2256FDB600CC48E9 /* AnimalClassifier.mlmodel */,
 				F6DDED3B2256FA4E00CC48E9 /* View */,
 				F6DDED3A2256FA4200CC48E9 /* Controller */,
 				F6DDED262256F4D000CC48E9 /* AppDelegate.swift */,
@@ -157,6 +160,7 @@
 				F6DDED292256F4D000CC48E9 /* ClassifierViewController.swift in Sources */,
 				F6DDED272256F4D000CC48E9 /* AppDelegate.swift in Sources */,
 				F6DDED392256F88900CC48E9 /* RoundedVisualEffectView.swift in Sources */,
+				F6DDED3D2256FDB600CC48E9 /* AnimalClassifier.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
