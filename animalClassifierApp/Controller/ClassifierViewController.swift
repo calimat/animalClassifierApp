@@ -29,23 +29,48 @@ class ClassifierViewController: UIViewController {
         }
     }()
     
-    func processClassifications(for request: VNRequest, error: Error?) {
-        guard let classifcations = request.results as? [VNClassificationObservation] else {
-            self.classificationLabel.text = "Unable to classify image. \n\(error?.localizedDescription ?? "Error")"
+    func processClassifications(for request: VNRequest, error: Error?) {    
+        DispatchQueue.main.async {
+            guard let classifcations = request.results as? [VNClassificationObservation] else {
+                self.classificationLabel.text = "Unable to classify image. \n\(error?.localizedDescription ?? "Error")"
+                return
+            }
+            
+            if classifcations.isEmpty {
+                self.classificationLabel.text = "Nothing recognized."
+            } else {
+                let topClassifications = classifcations.prefix(2)
+                let descriptions = topClassifications.map { classification in
+                    return String(format: "%.2f", classification.confidence * 100) + "% -" + classification.identifier
+                }
+                
+                self.classificationLabel.text = "Classsifcations:\n" + descriptions.joined(separator: "\n")
+            }
+        }
+    }
+    
+    func updateClassifications(for image:UIImage) {
+        classificationLabel.text = "Classyfing..."
+        
+        guard let orientation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)) , let ciImage = CIImage(image: image) else {
+            displayError()
             return
         }
         
-        if classifcations.isEmpty {
-            self.classificationLabel.text = "Nothing recognized."
-        } else {
-            let topClassifications = classifcations.prefix(2)
-            let descriptions = topClassifications.map { classification in
-                return String(format: "%.2f", classification.confidence * 100) + "% -" + classification.identifier
+        DispatchQueue.global(qos: .userInteractive).async {
+            let handler = VNImageRequestHandler(ciImage: ciImage, orientation: orientation)
+            do {
+                try handler.perform([self.classificationRequest])
+            } catch {
+                debugPrint("Fails to perform classification.\n \(error.localizedDescription)")
             }
-            
-            self.classificationLabel.text = "Classsifcations:\n" + descriptions.joined(separator: "\n")
         }
         
+        
+    }
+    
+    func displayError() {
+        classificationLabel.text = "Something went wrong... \n Please try again."
     }
     
     @IBAction func cameraBtnWasPressed(_ sender: Any) {
@@ -85,6 +110,6 @@ extension ClassifierViewController : UIImagePickerControllerDelegate, UINavigati
         guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { fatalError("No image returned") }
         
         imageView.image = image
-        //use image to make predictions with CoreML model
+        updateClassifications(for: image)
     }
 }
